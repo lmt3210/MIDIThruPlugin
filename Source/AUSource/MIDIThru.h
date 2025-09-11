@@ -31,7 +31,7 @@
 #define LT_NO_COCOA
 #include "LTLog.h"
 
-#define kMIDIThruVersion 65538
+#define kMIDIThruVersion 0x010003
 
 #define kMIDIPacketListSize 2048
 

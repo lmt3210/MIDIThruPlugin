@@ -149,8 +149,6 @@ OSStatus midiMonProc(void *userData, const AudioTimeStamp *timeStamp,
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-
     mMIDIControl.recordEnable = 0;
     
     // Stop timer
@@ -214,8 +212,7 @@ OSStatus midiMonProc(void *userData, const AudioTimeStamp *timeStamp,
     mLightOffCount = 5;
     
     // Setup main window
-    [[mView window] setStyleMask:(NSWindowStyleMaskTitled |
-                                  NSWindowStyleMaskClosable)];
+    [[mView window] setStyleMask:(NSWindowStyleMaskTitled)];
     [[mView window] setMinSize:NSMakeSize(305, 210)];  // w, h
     [[mView window] setMaxSize:NSMakeSize(FLT_MAX, FLT_MAX)];
     [[mView window] setReleasedWhenClosed:NO];
